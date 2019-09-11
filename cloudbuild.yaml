@@ -1,9 +1,7 @@
 #cloudbuild.yaml
 steps:
-- name: 'docker/compose:1.19.0'
+- name: 'docker/compose:1.19.0' #Step 0
   args: ['up', '-d']
-- name: 'docker/compose:1.19.0'
+- name: 'docker/compose:1.19.0' #Step 1
   args: ['-f', 'docker-compose.yml','build']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'eu.gcr.io/opencti/cti-image']
 images: ['eu.gcr.io/opencti/cti-image']
