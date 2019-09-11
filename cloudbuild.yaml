@@ -2,6 +2,34 @@
 steps:
 - name: 'docker/compose:1.19.0' #Step 0
   args: ['up', '-d']
+  
 - name: 'gcr.io/cloud-builders/docker' #Step 1
-  args: ['tag', 'workspace_app:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'workspace_grakn:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  
+- name: 'gcr.io/cloud-builders/docker' #Step 2
+  args: ['tag', 'workspace_redis:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  
+- name: 'gcr.io/cloud-builders/docker' #Step 3
+  args: ['tag', 'workspace_elasticsearch:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  
+- name: 'gcr.io/cloud-builders/docker' #Step 4
+  args: ['tag', 'workspace_rabbitmq:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  
+- name: 'gcr.io/cloud-builders/docker' #Step 5
+  args: ['tag', 'workspace_opencti:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  
+- name: 'gcr.io/cloud-builders/docker' #Step 6
+  args: ['tag', 'workspace_worker-import:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  
+- name: 'gcr.io/cloud-builders/docker' #Step 7
+  args: ['tag', 'workspace_worker-export:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  
+- name: 'gcr.io/cloud-builders/docker' #Step 8
+  args: ['tag', 'workspace_connector-opencti:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  
+- name: 'gcr.io/cloud-builders/docker' #Step 9
+  args: ['tag', 'workspace_connector-mitre:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  
 images: ['eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+
+# grakn redis elasticsearch rabbitmq opencti worker-import worker-export connector-opencti connector-mitre
