@@ -4,31 +4,31 @@ steps:
   args: ['up', '-d']
   
 - name: 'gcr.io/cloud-builders/docker' #Step 1
-  args: ['tag', 'workspace_grakn_1:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'workspace_grakn_1', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
   
 - name: 'gcr.io/cloud-builders/docker' #Step 2
-  args: ['tag', 'workspace_redis_1:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'workspace_redis_1', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
   
 - name: 'gcr.io/cloud-builders/docker' #Step 3
-  args: ['tag', 'workspace_elasticsearch_1:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'workspace_elasticsearch_1', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
   
 - name: 'gcr.io/cloud-builders/docker' #Step 4
-  args: ['tag', 'workspace_rabbitmq_1:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'workspace_rabbitmq_1', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
   
 - name: 'gcr.io/cloud-builders/docker' #Step 5
-  args: ['tag', 'workspace_opencti_1:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'workspace_opencti_1', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
   
 - name: 'gcr.io/cloud-builders/docker' #Step 6
-  args: ['tag', 'workspace_worker-import_1:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'workspace_worker-import_1', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
   
 - name: 'gcr.io/cloud-builders/docker' #Step 7
-  args: ['tag', 'workspace_worker-export_1:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'workspace_worker-export_1', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
   
 - name: 'gcr.io/cloud-builders/docker' #Step 8
-  args: ['tag', 'workspace_connector-opencti_1:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'workspace_connector-opencti_1', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
   
 - name: 'gcr.io/cloud-builders/docker' #Step 9
-  args: ['tag', 'workspace_connector-mitre_1:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'workspace_connector-mitre_1', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
   
 images: ['eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
 
