@@ -1,6 +1,6 @@
 #cloudbuild.yaml
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'gcr.io/opencti/quickstart-image', '.' ]
+- name: 'docker/compose'
+  args: ['up', '-d']
 images:
-- 'gcr.io/opencti/quickstart-image'
+- 'gcr.io/opencti/cti'
