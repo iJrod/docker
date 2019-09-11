@@ -2,6 +2,6 @@
 steps:
 - name: 'docker/compose:1.19.0' #Step 0
   args: ['up', '-d']
-- name: 'docker/compose:1.19.0' #Step 1
-  args: ['-f', 'docker-compose.yml','build']
-images: ['eu.gcr.io/opencti/cti-image']
+- name: 'gcr.io/cloud-builders/docker' #Step 1
+  args: ['tag', 'workspace_app:latest', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+images: ['eu.gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
