@@ -4,6 +4,6 @@ steps:
   args: ['up', '-d']
 - name: 'docker/compose:1.19.0'
   args: ['-f', 'docker-compose.yml','build']
-images: ['eu.gcr.io/opencti/cti-image']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'eu.gcr.io/opencti/cti-image']
+images: ['eu.gcr.io/opencti/cti-image']
